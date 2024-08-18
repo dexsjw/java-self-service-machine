@@ -2,10 +2,10 @@ import java.util.Random;
 
 public class ClawMachine extends SelfServiceMachine implements PaymentEnabled {
 
-    private double earnings;
-    private double balance;
     private static final double AMOUNT_TO_PLAY = 0.5;
     private static final String[] PRIZES = {"Candy", "Plushie", "iPhone", "Switch", "Mouse"};
+    private double earnings;
+    private double balance;
 
     public ClawMachine(String location) {
         this.machineName = "Claw Machine";
@@ -26,6 +26,7 @@ public class ClawMachine extends SelfServiceMachine implements PaymentEnabled {
             returnChange();
         } else {
             System.out.println("Insufficient funds to play.");
+            System.out.println("Current amount: " + balance);
         }
     }
 

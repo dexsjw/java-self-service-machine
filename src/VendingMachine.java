@@ -39,13 +39,20 @@ public class VendingMachine extends SelfServiceMachine implements PaymentEnabled
     }
 
     private void returnChange() {
-        System.out.println("Returning change of: " + this.balance);
+        System.out.println("Returning change of: $" + this.balance);
         this.balance = 0;
     }
 
     public void printEarnings() {
         System.out.printf("Total earnings are $%,.2f.%n", earnings);
         System.out.println(transactionHistory);
+    }
+
+    public void printTransactions() {
+        System.out.println("Transaction History:");
+        for (Drink transaction : transactionHistory) {
+            System.out.println("Drink: " + transaction.getName() + ", Price: " + transaction.getPrice());
+        }
     }
 
     @Override
